@@ -19,6 +19,8 @@ $ npm run release               #编译源代码产至dist目录
 >技术栈
 ```
 webpack+es6+react+sass
+脚手架地址
+[This link](http://example.net/) has no title attribute.
 ```
 
 >目录结构说明
