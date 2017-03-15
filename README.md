@@ -19,7 +19,6 @@ $ npm run release               #编译源代码产至dist目录
 >技术栈
 ```
 webpack+es6+react+sass+express
-脚手架地址
 ```
 >技术栈
 
