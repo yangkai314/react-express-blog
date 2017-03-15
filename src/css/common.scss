@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+/*common*/
+body,html,div,p,ul,li,ol,dl,dt,dd,img,a,h1,h2,h3,h4,h5,h6,em,span,strong,input,table,caption,tr,td,th{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,li,dl,dt,dd{list-style: none;}
+a{text-decoration: none;color: #333;}
+a:hover,a:focus{text-decoration: none;outline: none;border:none;color: #333;}
+a:visited {text-decoration: none;}
+img{border:none;display: block;}
+body,html{font-family: "Microsoft YaHei","宋体";background: #fff;font-size: 14px;color: #333;}
+input,textarea,select{font-family: "Microsoft YaHei","宋体";font-size: 14px;color: #666;border: none;padding: 0 8px;}
+input:focus,input:active:focus{outline: none;}
+i,em{font-style: normal;}
+img{max-width: 100%;}
+
+.container{
+  width: 1080px;margin: 0 auto;
+  @media only screen and (max-width:1170px) {
+    width: 940px;
+  }
+  @media only screen and (max-width:960px) {
+    width: 726px;
+  }
+  @media only screen and (max-width:768px) {
+    width: 480px;
+  }
+  @media only screen and (max-width:481px) {
+    width: 300px;
+  }
+}
+
+.pullLeft{
+  float: left;
+}
+.pullRight{
+  float: right;
+}
+.clear{
+  zoom:1;
+  &:after{
+    display: block;
+    content: '';
+    clear: both;
+    overflow: hidden;
+  }
+}
+
+.textCenter{
+  text-align: center;
+}
+.textLeft{
+  text-align: left;
+}
+.textRight{
+  text-align: right;
+}

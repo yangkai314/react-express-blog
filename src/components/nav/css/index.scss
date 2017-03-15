@@ -1,0 +1,53 @@
+
+.nav{
+  height: 51px;
+  line-height: 51px;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 1px 5px #e3e3e3;
+  @at-root {
+    .navList{
+      @media only screen and (max-width: 485px) {
+        display: none;
+      }
+      li{
+        float: left;
+        margin-right: 26px;
+      }
+    }
+    .navSearch{
+      padding-left: 20px;
+      border-left: 1px solid #eee;
+      position: relative;
+      .navSearch-toggle{
+        display: none;
+      }
+      .search-show{
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -100%;
+        border: 1px solid #eee;
+        input{
+          display: block;
+        }
+      }
+      .search-hide{
+        display: none;
+      }
+      @media only screen and (max-width: 485px) {
+        input{
+          display: none;
+        }
+        .navSearch-desktop{
+          display: none;
+        }
+        .navSearch-toggle{
+          display: inline-block;
+        }
+      }
+      form{
+        display: inline-block;
+      }
+    }
+  }
+}
