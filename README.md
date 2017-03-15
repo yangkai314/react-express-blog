@@ -18,8 +18,12 @@ $ npm run release               #编译源代码产至dist目录
 
 >技术栈
 ```
-webpack+es6+react+sass
+webpack+es6+react+sass+express
+脚手架地址
 ```
+>技术栈
+
+[脚手架地址](https://git.oschina.net/mayday314/react-es6-webpack)
 
 >目录结构说明
 ```
@@ -36,20 +40,3 @@ webpack+es6+react+sass
     ├──index.js                 #项目入口js
 ```
 
->2017.3.8
-```
-第一次提交
-持续更新，后续会添加react-touter,redux
-```
-
->2017.3.10
-```
-更新web-dev-server启动地址为 localhost:8000
-加入了react-router初级应用
-```
-
->2017.3.11
-```
-因localhost:8000只能使用localhost:8000或者127.0.0.1:8000访问app，
-更新web-dev-server启动地址为 0.0.0.0:8000，这样也能使用本地ip来访问app(如192.106.0.108)
-```
