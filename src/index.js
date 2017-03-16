@@ -17,6 +17,8 @@ import Footer from './components/footer/index'
 import Aside from './components/aside/index'
 
 import Home from './pages/home/index'
+import Contact from './pages/contact/index'
+import AboutMe from './pages/aboutMe/index'
 
 
 class Action extends Component {
@@ -35,9 +37,9 @@ class App extends Component {
         <Header />
         <div className="body">
           <div className="container clear">
-            {/*<div className="pullLeft content">*/}
+            <div className="pullLeft body_content">
               {this.props.children}
-            {/*</div>*/}
+            </div>
             <Aside />
           </div>
         </div>
@@ -52,11 +54,8 @@ render(
     <Router history={browserHistory}>
       <route path="/" component={App}>
         <IndexRoute component={Home}/>
-        <route path="page1" component={Page1}/>
-        <route path="page2" component={Page2}>
-          <IndexRoute component={IndexPage2}/>
-          <route path="page3" component={Page3}/>
-        </route>
+        <route path="aboutMe" component={AboutMe}/>
+        <route path="contact" component={Contact}/>
       </route>
     </Router>
   ),

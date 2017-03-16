@@ -26,8 +26,8 @@ class NavList extends Component {
     return (
       <ul className="pullLeft clear navList">
         <li><IndexLink to="/">HOME</IndexLink></li>
-        <li><IndexLink to="/">ABOUT ME</IndexLink></li>
-        <li><IndexLink to="/">CONTACT</IndexLink></li>
+        <li><IndexLink to="/aboutMe">ABOUT ME</IndexLink></li>
+        <li><IndexLink to="/contact">CONTACT</IndexLink></li>
       </ul>
     )
   }
