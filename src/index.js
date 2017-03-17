@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Router, Route, Link,IndexLink, browserHistory, IndexRoute} from 'react-router';
 
+import './css/variable.scss';
 import './css/common.scss';
 
 import Page1 from './pages/page1/index'
@@ -19,7 +20,8 @@ import Aside from './components/aside/index'
 import Home from './pages/home/index'
 import Contact from './pages/contact/index'
 import AboutMe from './pages/aboutMe/index'
-
+import IndexArticleList,{ArticleList} from './pages/articleList/index'
+import ArticleDetail from './pages/articleDetail/index'
 
 class Action extends Component {
   render() {
@@ -53,9 +55,13 @@ render(
   (
     <Router history={browserHistory}>
       <route path="/" component={App}>
-        <IndexRoute component={Home}/>
+        <IndexRoute component={Home} />
         <route path="aboutMe" component={AboutMe}/>
         <route path="contact" component={Contact}/>
+        <route path="articleList" component={ArticleList}>
+          <IndexRoute component={IndexArticleList}/>
+          <route path="articleDetail/:id" component={ArticleDetail}/>
+        </route>
       </route>
     </Router>
   ),

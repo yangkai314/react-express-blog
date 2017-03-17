@@ -23,7 +23,7 @@ let config = {
   },
   output : {
     path : DIST_PATH,
-    // publicPath : DIST_PATH,
+    publicPath : '/',
     filename : 'js/[name].js',
     chunkFilename : 'js/[name].js'
   },
