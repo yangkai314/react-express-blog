@@ -8,10 +8,6 @@ import {Router, Route, Link,IndexLink, browserHistory, IndexRoute} from 'react-r
 import './css/variable.scss';
 import './css/common.scss';
 
-import Page1 from './pages/page1/index'
-import Page2,{IndexPage2} from './pages/page2/index'
-// import IndexPage2 from './pages/page2/index'
-import Page3 from './pages/page3/index'
 import Nav from './components/nav/index'
 import Header from './components/header/index'
 import Footer from './components/footer/index'
@@ -23,13 +19,6 @@ import AboutMe from './pages/aboutMe/index'
 import IndexArticleList,{ArticleList} from './pages/articleList/index'
 import ArticleDetail from './pages/articleDetail/index'
 
-class Action extends Component {
-  render() {
-    return (
-      <div className="action">action</div>
-    )
-  }
-}
 
 class App extends Component {
   render() {

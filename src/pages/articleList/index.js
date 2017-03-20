@@ -5,7 +5,8 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Router, Route, Link,IndexLink, browserHistory, IndexRoute} from 'react-router';
 
-// import '/src/css/variable.scss';
+import Article_hd from '../../components/article_hd/index'
+import Article_ft from '../../components/article_ft/index'
 import './css/index.scss';
 
 import ArtPic from './img/article.jpg'
@@ -56,12 +57,7 @@ export default class IndexArticleList extends Component {
       if(index==0){
         return (
           <li key={index} className='ArticleList_first'>
-            <div className="ArticleList_hd textCenter">
-              <h2>
-                <Link to={"/articleList/articleDetail/"+article.id}>{article.title}</Link>
-              </h2>
-              <span className="ArticleList_time">March 8,2015</span>
-            </div>
+            <Article_hd id={article.id} title={article.title}/>
             <div className="ArticleList_pic">
               <Link to="/articleList/articleDetail">
                 <img src={article.pic} alt=""/>
@@ -73,10 +69,7 @@ export default class IndexArticleList extends Component {
             <div className="ArticleList_detail">
               <Link className="textCenter" to={"/articleList/articleDetail/"+article.id}>Continue Reading</Link>
             </div>
-            <div className="ArticleList_ft clear">
-              <span className="comment_num">4 comments</span>
-              <span className="pullRight">by : yang kai</span>
-            </div>
+            <Article_ft />
           </li>
         )
       }
@@ -87,7 +80,7 @@ export default class IndexArticleList extends Component {
               <img src={article.pic} alt=""/>
             </Link>
           </div>
-          <div className="ArticleList_hd textCenter">
+          <div className="article_title textCenter">
             <h2>
               <Link to={"/articleList/articleDetail/"+article.id}>{article.title}</Link>
             </h2>
@@ -95,7 +88,7 @@ export default class IndexArticleList extends Component {
           <div className="ArticleList_content">
             {article.content}
           </div>
-          <span className="ArticleList_time">March 8,2015</span>
+          <span className="article_time">March 8,2015</span>
         </li>
       )
     });
