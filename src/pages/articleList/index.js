@@ -14,6 +14,34 @@ import ArtPic2 from './img/article2.jpg'
 import ArtPic3 from './img/article3.jpg'
 
 class ArticleList extends Component {
+  constructor(props) {
+    super(props);
+    this.state={
+      data:[
+        {
+          'title':'Explore the Pacific Northwest1',
+          'pic':ArtPic,
+          'id':1,
+          'content':'Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. ' +
+          'Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse nihil, flexitarian Truffaut synth art party deep' +
+          ' v chillwave. Seitan High Life reprehenderit consectetur cupidatat kogi. Et leggings fanny pack, elit bespoke vinyl art party' +
+          ' Pitchfork selfies master cleanse Kickstarter seitan retro. Drinking vinegar stumptown yr pop-up artisan sunt. Deep v cliche ' +
+          'lomo biodiesel Neutra selfies.'
+        },
+        {
+          'title':'Explore the Pacific Northwest2',
+          'pic':ArtPic2,
+          'id':2,
+          'content':'Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse nihil, flexitarian Truffaut synth art party…'},
+        {
+          'title':'Explore the Pacific Northwest3',
+          'pic':ArtPic3,
+          'id':3,
+          'content':'Meh synth Schlitz, tempor duis single-origin coffee ea next level ethnic fingerstache fanny pack nostrud. Photo booth anim 8-bit hella, PBR 3 wolf moon beard Helvetica. Salvia esse nihil, flexitarian Truffaut synth art party…'}
+      ]
+    }
+  }
+
   render() {
     return (
       <div>

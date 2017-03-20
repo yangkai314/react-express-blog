@@ -4,6 +4,7 @@
   line-height: 51px;
   border-bottom: 1px solid #eee;
   box-shadow: 0 1px 5px #e3e3e3;
+  position: relative;
   @at-root {
     .navList{
       @media only screen and (max-width: 485px) {
@@ -12,6 +13,31 @@
       li{
         float: left;
         margin-right: 26px;
+      }
+    }
+    .navList_phone{
+      display: none;
+      @media only screen and (max-width: 485px) {
+        display: block;
+      }
+      .iconfont{
+        font-size: 27px;
+        line-height: 43px;
+      }
+      ul{
+        position: absolute;
+        width: 90%;
+        left: 5%;
+        z-index: 5;
+        background: #f6f6f6;
+        li{
+          a{
+            display: block;
+            line-height: 22px;
+            padding: 5px 10px;
+            margin: 2px 5px;
+          }
+        }
       }
     }
     .navSearch{
