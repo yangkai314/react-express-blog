@@ -3,7 +3,8 @@
  */
 import React, {Component} from 'react';
 import {render} from 'react-dom';
-import {Router, Route, Link,IndexLink, browserHistory, IndexRoute} from 'react-router';
+import {Router, Route, Link,IndexLink, browserHistory, IndexRoute ,applyRouterMiddleware} from 'react-router';
+import {useScroll} from 'react-router-scroll'
 
 import './css/variable.scss';
 import './css/common.scss';
@@ -40,9 +41,10 @@ class App extends Component {
   }
 }
 
+
 render(
   (
-    <Router history={browserHistory}>
+    <Router history={browserHistory} render={applyRouterMiddleware(useScroll())}>
       <route path="/" component={App}>
         <IndexRoute component={Home} />
         <route path="aboutMe" component={AboutMe}/>

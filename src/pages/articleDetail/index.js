@@ -4,6 +4,7 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Router, Route, Link, IndexLink, browserHistory, IndexRoute} from 'react-router';
+import $ from './jquery-2.1.3.min'
 
 import Article_hd from '../../components/article_hd/index'
 import Article_ft from '../../components/article_ft/index'
@@ -24,6 +25,22 @@ export default class ArticleDetail extends Component {
     'lomo biodiesel Neutra selfies.'
   };
 
+  constructor(props){
+    super(props);
+    $.ajax({
+      url:'/api/articleList',
+      type:'post',
+      data:'',
+      dataType:'text',
+      success:function(data){
+        console.log(data);
+        this.setState({
+          data:data
+        })
+      }.bind(this)
+    })
+  }
+
   render() {
     return (
       <div className="ArticleDetail">
@@ -32,7 +49,7 @@ export default class ArticleDetail extends Component {
           <img src={this.props.pic} alt=""/>
         </div>
         <div className="ArticleDetail_content">
-          {this.props.content}
+          {this.props.content}{this.state?this.state.data:''}
         </div>
         <div className="ArticleDetail"></div>
         <Article_ft />

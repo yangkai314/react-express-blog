@@ -12,4 +12,8 @@ app.get('*', function (req, res) {
   res.sendFile(ROOT_PATH+'/dist/index.html');
 });
 
+app.post('/api/articleList',function(req,res){
+  res.send('my name is yang kai!');
+});
+
 app.listen(3000);
