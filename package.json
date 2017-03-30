@@ -4,7 +4,9 @@
   "description": "react-app",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "mysql": "^2.13.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^3.0.2",
@@ -32,7 +34,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node config/webpack.dev.js --hot",
     "release": "node config/webpack.release.js",
-    "start:express": "npm run release && node server/server.js"
+    "express": "node server/server.js",
+    "start:express": "npm run release && node server/server.js",
+    "release:w": "webpack --config config/webpack.config.js --watch"
   },
   "keywords": [
     "react",

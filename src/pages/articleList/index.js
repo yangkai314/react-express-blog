@@ -4,6 +4,7 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Router, Route, Link, IndexLink, browserHistory, IndexRoute} from 'react-router';
+import $ from '../../js/jquery-2.1.3.min'
 
 import Article_hd from '../../components/article_hd/index'
 import Article_ft from '../../components/article_ft/index'
@@ -53,46 +54,61 @@ export default class IndexArticleList extends Component {
     ]
   };
 
+  constructor(props){
+    super(props);
+    $.ajax({
+      url:'/api/articleList',
+      type:'post',
+      data:'',
+      dataType:'json',
+      success:function(data){
+        this.setState({
+          data:data
+        });
+      }.bind(this)
+    })
+  }
+
   render() {
-    let ArticleNodes = this.props.data.map((article, index) => {
+    let ArticleNodes = this.state?this.state.data.map((article, index) => {
       if (index == 0) {
         return (
           <li key={index} className='ArticleList_first'>
-            <Article_hd id={article.id} title={article.title}/>
+            <Article_hd id={article.tid} title={article.article_title} time={article.create_time}/>
             <div className="ArticleList_pic">
               <Link to="/articleList/articleDetail">
-                <img src={article.pic} alt=""/>
+                <img src={article.img} alt=""/>
               </Link>
             </div>
             <div className="ArticleList_content">
-              {article.content}
+              {article.article_content}
             </div>
             <div className="ArticleList_detail">
-              <Link className="textCenter" to={"/articleList/articleDetail/" + article.id}>Continue Reading</Link>
+              <Link className="textCenter" to={"/articleList/articleDetail/" + article.tid}>Continue Reading</Link>
             </div>
-            <Article_ft />
+            <Article_ft author={article.article_author}/>
           </li>
         )
       }
       return (
         <li key={index}>
           <div className="ArticleList_pic">
-            <Link to={"/articleList/articleDetail/" + article.id}>
-              <img src={article.pic} alt=""/>
+            <Link to={"/articleList/articleDetail/" + article.tid}>
+              <img src={article.img} alt=""/>
             </Link>
           </div>
           <div className="article_title textCenter">
             <h2>
-              <Link to={"/articleList/articleDetail/" + article.id}>{article.title}</Link>
+              <Link to={"/articleList/articleDetail/" + article.tid}>{article.article_title}</Link>
             </h2>
           </div>
           <div className="ArticleList_content">
-            {article.content}
+            {article.article_content}
           </div>
           <span className="article_time">March 8,2015</span>
         </li>
       )
-    });
+      }):()=>(<div>loading</div>);
     return (
       <div className="ArticleList">
         <ul>

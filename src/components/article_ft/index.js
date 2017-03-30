@@ -12,7 +12,7 @@ export default class Article_ft extends Component {
     return (
       <div className="article_ft clear">
         <span className="comment_num">4 comments</span>
-        <span className="pullRight">by : yang kai</span>
+        <span className="pullRight">by : {this.props.author}</span>
       </div>
     )
   }

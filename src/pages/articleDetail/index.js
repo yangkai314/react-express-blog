@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Router, Route, Link, IndexLink, browserHistory, IndexRoute} from 'react-router';
-import $ from './jquery-2.1.3.min'
+import $ from '../../js/jquery-2.1.3.min'
 
 import Article_hd from '../../components/article_hd/index'
 import Article_ft from '../../components/article_ft/index'
@@ -27,16 +27,14 @@ export default class ArticleDetail extends Component {
 
   constructor(props){
     super(props);
+    let that=this;
     $.ajax({
-      url:'/api/articleList',
+      url:'/api/articleDetail',
       type:'post',
-      data:'',
-      dataType:'text',
+      data:{id:that.props.routeParams.id},
+      dataType:'json',
       success:function(data){
-        console.log(data);
-        this.setState({
-          data:data
-        })
+        this.setState(data);
       }.bind(this)
     })
   }
@@ -44,15 +42,15 @@ export default class ArticleDetail extends Component {
   render() {
     return (
       <div className="ArticleDetail">
-        <Article_hd id={this.props.routeParams.id} title={this.props.title}/>
+        <Article_hd id={this.props.routeParams.id} title={this.state?this.state.article_title:''} time={this.state?this.state.create_time:''}/>
         <div className="ArticleDetail_pic">
-          <img src={this.props.pic} alt=""/>
+          <img src={this.state?this.state.img:''} alt=""/>
         </div>
         <div className="ArticleDetail_content">
-          {this.props.content}{this.state?this.state.data:''}
+          {this.state?this.state.article_content:'123456789'}
         </div>
         <div className="ArticleDetail"></div>
-        <Article_ft />
+        <Article_ft author={this.state?this.state.article_author:''} />
 
         <div className="article-related">
           <h4 className="article-related_hd textCenter">

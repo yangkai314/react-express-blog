@@ -18,7 +18,7 @@ let config = {
   entry : {
     app : [SRC_PATH+'/index.js'],
     lib : [
-      'react', 'react-dom' , 'react-router'
+      'react', 'react-dom' , 'react-router' , 'react-router-scroll' , SRC_PATH+'/js/jquery-2.1.3.min.js'
     ]
   },
   output : {
