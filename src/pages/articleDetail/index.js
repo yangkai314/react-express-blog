@@ -4,6 +4,7 @@
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Router, Route, Link, IndexLink, browserHistory, IndexRoute} from 'react-router';
+import Remarkable from 'remarkable'
 import $ from '../../js/jquery-2.1.3.min'
 
 import Article_hd from '../../components/article_hd/index'
@@ -39,15 +40,24 @@ export default class ArticleDetail extends Component {
     })
   }
 
+  // rawMarkup(markdown){
+  //   var md = new Remarkable();
+  //   var rawMarkups = md.render(this.props.children.toString());
+  //   return { __html: rawMarkups };
+  // }
+
   render() {
+    let md = new Remarkable();
+    let content={__html:md.render(this.state?this.state.article_content:'123456789')};
     return (
       <div className="ArticleDetail">
         <Article_hd id={this.props.routeParams.id} title={this.state?this.state.article_title:''} time={this.state?this.state.create_time:''}/>
         <div className="ArticleDetail_pic">
           <img src={this.state?this.state.img:''} alt=""/>
         </div>
-        <div className="ArticleDetail_content">
-          {this.state?this.state.article_content:'123456789'}
+        <div className="ArticleDetail_content" dangerouslySetInnerHTML={content}>
+          {/*<p dangerouslySetInnerHTML={content}></p>*/}
+          {/*{this.state?this.state.article_content:'123456789'}*/}
         </div>
         <div className="ArticleDetail"></div>
         <Article_ft author={this.state?this.state.article_author:''} />

@@ -1,0 +1,25 @@
+.write{
+  margin: 50px;
+  .write_line{
+    margin: 10px 0;
+    input,textarea{border: 1px solid #ccc;}
+    textarea{width: 750px;height: 300px;}
+    .submit{
+      display: block;
+      width: 60px;
+      height: 30px;
+      line-height: 30px;
+      background: #e4393c;
+      border-radius: 6px;
+      text-align: center;
+      color: #fff;
+      &:hover{
+        background: lighten(#e4393c,5%);
+      }
+    }
+    .submit2{
+      @extend .submit;
+      background: lighten(#f36,5%);
+    }
+  }
+}

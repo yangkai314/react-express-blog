@@ -328,5 +328,27 @@ img {
     background: #eee;
     border-radius: 20px;
     margin-top: 10px; }
+.write {
+  margin: 50px; }
+  .write .write_line {
+    margin: 10px 0; }
+    .write .write_line input, .write .write_line textarea {
+      border: 1px solid #ccc; }
+    .write .write_line textarea {
+      width: 750px;
+      height: 300px; }
+    .write .write_line .submit, .write .write_line .submit2 {
+      display: block;
+      width: 60px;
+      height: 30px;
+      line-height: 30px;
+      background: #e4393c;
+      border-radius: 6px;
+      text-align: center;
+      color: #fff; }
+      .write .write_line .submit:hover, .write .write_line .submit2:hover {
+        background: #e74f52; }
+    .write .write_line .submit2 {
+      background: #ff4d79; }
 
 /*# sourceMappingURL=app.css.map*/

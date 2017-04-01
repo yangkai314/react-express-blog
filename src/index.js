@@ -19,6 +19,7 @@ import Contact from './pages/contact/index'
 import AboutMe from './pages/aboutMe/index'
 import IndexArticleList,{ArticleList} from './pages/articleList/index'
 import ArticleDetail from './pages/articleDetail/index'
+import Write from './pages/write/index'
 
 
 class App extends Component {
@@ -54,6 +55,7 @@ render(
           <route path="articleDetail/:id" component={ArticleDetail}/>
         </route>
       </route>
+      <route path="/write" component={Write}/>
     </Router>
   ),
   document.getElementById('app')

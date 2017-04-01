@@ -15,6 +15,17 @@ app.use(bodyParser.urlencoded({            //此项必须在 bodyParser.json 下
   extended: true
 }));
 
+
+// let username='yang';
+// let password=123456;
+// query.query("INSERT INTO user_info(username,password) VALUES('"+username+"','"+password+"')",function(err,rows){
+//   if(err){
+//     console.log(err);
+//   }else{
+//     console.log('success',rows);
+//   }
+// });
+
 app.get('*', function (req, res) {
   res.sendFile(ROOT_PATH+'/dist/index.html');
 });
@@ -39,6 +50,17 @@ app.post('/api/articleDetail',function(req,res){
       res.send(rows[0]);
     }
   });
+});
+
+app.post('/api/write',function(req,res){
+  query.query("insert into articleList(article_author,article_title,article_content) " +
+    "values('"+req.body.author+"','"+req.body.title+"','"+req.body.content+"')",function (err,rows) {
+    if(err){
+      console.log(err);
+    }else{
+      console.log('success',rows);
+    }
+  })
 });
 
 app.listen(3000);
